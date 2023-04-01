@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="text" id="inputFrm">
+    <button id="btn">Click</button>
+    <p> Result: <span id="result"></span></p>
+
+<script>
+    
+    let clickBtn = document.getElementById('btn');
+        clickBtn.addEventListener('click', () => {
+            let input = document.getElementById("inputFrm").value;
+            let inputArray = input.split(" ");
+            let duplicate = inputArray.filter(function(value, index, array){
+                return array.indexOf(value) !== index    
+                // return array.indexOf(value) === index   show result without dupli
+            });
+            
+            let result = document.getElementById('result');
+            result.textContent= duplicate; 
+             
+
+        });
+        
+</script>
+
+
+</body>
+</html>
